@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table, th, td {
+            border: 1px solid rgb(192, 192, 192);
+        }
+        th, td {
+            border-style: none;
+        }
+        a{
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <form action="http://localhost/login.php" method="post">
+        <table>
+            <tr>
+                <td><label for="email">Email</label></td>
+                <td><input required type="text" id="email" name="email" placeholder="email@domain.com"></td>
+            </tr>
+            <tr>
+                <td><label for="pass">Password</label></td>
+                <td><input required type="password" id="pass" name="pass"></td>
+            </tr>
+            <tr>
+                <td><label for="remember">Remember me</label></td>
+                <td><input type="checkbox" id="remember" name="remember"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><button type="submit">Login</button></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><p>Not registered? <a href="http://localhost/registered?">Creat an account</a></p></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><p>For got your password? <a href="http://localhost/reset">Click here to reset</a></p></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
