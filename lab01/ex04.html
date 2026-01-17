@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .text-center {
+            text-align: center;
+        }
+        table {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        table, th, td {
+            border: 1px solid rgb(192, 192, 192);
+        }
+        th, td {
+            border-style: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="text-center">
+        REGISTER FORM
+    </h1>
+    <form action="http://localhost/register.php" method="post">
+        <table>
+            <tr>
+                <td>
+                    <label for="fName">Your Name</label>
+                </td>
+
+                <td>
+                    <input required
+                    type="text" 
+                    name="fName" 
+                    id="fName"
+                    placeholder="Full Name">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="email">Email Address</label>
+                </td>
+
+                <td>
+                    <input required
+                    type="email" 
+                    name="email" 
+                    id="email"
+                    placeholder="Email">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="birthday">Birthday</label>
+                </td>
+
+                <td>
+                    <input required
+                    type="date" 
+                    name="birthday" 
+                    id="birthday">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="birthtime">Birthtime</label>
+                </td>
+
+                <td>
+                    <input required
+                    type="time"
+                    name="birthtime" 
+                    id="birthtime">
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="gender">Gender</label>
+                </td>
+
+                <td>
+                    <input type="radio" name="gender" id="male" value="Male">
+                    <label for="male">Male</label>
+
+                    <input type="radio" name="gender" id="female" value="Female">
+                    <label for="female">Female</label>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="from">From</label>
+                </td>
+
+                <td>
+                    <select name="country" id="country" placeholder="Select a country">
+                        <option disabled selected value="temp">Select a country</option>
+                        <optgroup label ="Asia">
+                            <option value="Vietnam">Vietnam</option>
+                            <option value="Laos">Laos</option>
+                            <option value="Cambodia">Cambodia</option>
+                            <option value="Singapore">Singapore</option>
+                        </optgroup>
+                        <optgroup label="Europe">
+                            <option value="France">France</option>
+                            <option value="Belgium">Belgium</option>
+                            <option value="Italy">Italy</option>
+                            <option value="Finland">Finland</option>
+                            <option value="Ireland">Ireland</option>
+                        </optgroup>
+                    </select>
+                </td>
+            </tr>
+
+            <tr>
+                <td style="vertical-align: top;"><label for="favorite-ide">
+                    Favorite IDE</label>
+                </td>
+                <td>
+                    <input type="checkbox" name="favorite_ide[]" value="VS Code"> Visual Studio Code<br>
+                    <input type="checkbox" name="favorite_ide[]" value="Sublime"> Sublime Text<br>
+                    <input type="checkbox" name="favorite_ide[]" value="Eclipse"> Eclipse<br>
+                    <input type="checkbox" name="favorite_ide[]" value="Atom"> Atom<br>
+                    <input type="checkbox" name="favorite_ide[]" value="IntelliJ"> IntelliJ Idea
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <label for="toeic-score">TOEIC Score</label>
+                </td>
+
+                <td>
+                    <input type="range" min="5" max="990" step="5" value="500"
+                    name="toeic-score" 
+                    id="toeic-score">
+                </td>
+            </tr>
+
+            <tr>
+                <td style="vertical-align: top;">
+                    <label for="message">Message</label>
+                </td>
+
+                <td>
+                    <textarea name="message" id="message" rows="5"></textarea>
+                </td>
+            </tr>
+
+            <tr>
+                <td></td>
+
+                <td>
+                    <button type="submit">Register</button>
+                    <button type="reset">Again</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
