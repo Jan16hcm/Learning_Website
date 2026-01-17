@@ -1,4 +1,15 @@
+```
 This is a personal project for learning website and application development.
+## 🛠 Technologies
+- HTML5
+- CSS (basic)
+- Git & GitHub
+
+## 🎯 Purpose
+- Practice HTML structure
+- Learn multimedia integration (audio, video)
+- Organize projects using Git branches
+
 📁 Project Structure
 ├── lab01
 │   ├── audio
@@ -22,3 +33,5 @@ This is a personal project for learning website and application development.
 ├── lab02
 │   └── index.html
 └── README.md
+
+```
