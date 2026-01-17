@@ -1,1 +1,1 @@
-This is personal project for learning Website & Application
+This is a personal project for learning website and application development.
