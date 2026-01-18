@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .content {
+            margin:auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <div class="form-group">
+            <label for="fname">Your Name</label>
+            <input required input="text" name="fname" id="fname" placeholder="Full Name">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input required input="email" name="email" id="email" placeholder="Email">
+            <br>
+            <label for="email-error">Email address is not valid</label>
+        </div>
+
+        <div class="form-group">
+            <label for="birthday">Birthday</label>
+            <input type="date" name="Birthday" id="birthday">
+        </div>
+
+        <div class="form-group">
+            <label for="birthtime">Birthtime</label>
+            <input type="time" name="birthtime" id="birthtime">
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Gender</label> <br>
+            <input type="radio" name="gender" id="male">Male
+            <input type="radio" name="gender" id="female">Female
+        </div>
+
+        <div class="form-group">
+            <label for="country">Country</label>
+            <select name="country" id="country" aria-placeholder="Select a country">
+                <option disabled selected value="temp">Select a country</option>
+                <optgroup>
+                    <option value="Vietnam">Vietnam</option>
+                </optgroup>
+            </select>
+        </div>
+
+        <div class="form-group">
+
+        </div>
+
+        <div class="form-group">
+            <button type="reset">
+                Reset
+            </button>
+        </div>
+    </div>
+</body>
+</html>
