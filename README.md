@@ -22,17 +22,15 @@ This is a personal project for learning website and application development.
 │   │   ├── team1.jpg
 │   │   ├── team2.jpg
 │   │   └── team3.jpg
-│   ├── lab01_khai
-│   │   ├── ex01.html
-│   │   ├── ex02.html
-│   │   ├── ex03.html
-│   │   ├── ex04.html
-│   │   ├── ex05.html
-│   │   └── ex06.html
-│   └── Lab01.pdf
+│   ├── Lab01.pdf
+│   └── zLab01_khai
+│       ├── ex01.html
+│       ├── ex02.html
+│       ├── ex03.html
+│       ├── ex04.html
+│       ├── ex05.html
+│       └── ex06.html
 ├── lab02
-│   ├── ex01.html
-│   ├── ex02.html
 │   ├── files
 │   │   ├── 2. Product Table.html
 │   │   ├── 3. Register Form.html
@@ -46,8 +44,13 @@ This is a personal project for learning website and application development.
 │   │   └── 8. Table.mp4
 │   ├── Lab02.pdf
 │   ├── References.pdf
-│   └── style.css
+│   └── zLab02_khai
+│       ├── ex01.html
+│       ├── ex02.html
+│       ├── ex03.html
+│       └── style.css
 └── README.md
+
 
 
 ```
