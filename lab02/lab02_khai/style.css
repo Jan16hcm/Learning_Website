@@ -1,0 +1,11 @@
+.btn-ex01 {
+    padding: 10px 20px;
+    background-color: black;
+    color:white;
+    border-radius: 5px;
+    border-style: none;
+    transition-property: background-color;
+}
+.btn-ex01:hover {
+    background-color: #808080;
+}
