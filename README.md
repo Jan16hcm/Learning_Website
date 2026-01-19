@@ -23,12 +23,8 @@ This is a personal project for learning website and application development.
 │   │   ├── team2.jpg
 │   │   └── team3.jpg
 │   ├── lab01_khai
-│   │   ├── ex01.html
-│   │   ├── ex02.html
-│   │   ├── ex03.html
-│   │   ├── ex04.html
-│   │   ├── ex05.html
-│   │   └── ex06.html
+│   │   ├── ex01-06.html
+│   │   
 │   └── Lab01.pdf
 ├── lab02
 │   ├── ex01.html
