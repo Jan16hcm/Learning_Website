@@ -107,3 +107,10 @@ button[type="submit"] {
 button[type="reset"] {
     background-color: #e3a73f;
 }
+
+/* ===== Ex04 ===== */
+.ex04-form {
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-size: x-small;
+}
