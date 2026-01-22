@@ -6,6 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .input-error {
+            font-size:xx-small;
+            color: #bc1313;
+            padding-top: 3px;
+            display: none;
+        }
+    </style>
 </head>
 
 <body class="bd-ex03">
@@ -75,6 +83,16 @@
                 <button type="reset">Reset</button>
             </div>
         </div>
+        <script>
+            function input_error() {
+                const p = document.getElementsByClassName('input-error');
+                if(p.style.display == 'block') {
+                    p.style.display = 'none';
+                } else {
+                    p.style.display = 'block';
+                }
+            }
+        </script>
     </form>
 </body>
 

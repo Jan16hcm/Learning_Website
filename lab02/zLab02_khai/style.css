@@ -73,11 +73,6 @@ select:focus {
     display: block;
 }
 
-.input-error {
-    font-size:xx-small;
-    color: #bc1313;
-    padding-top: 3px;
-}
 
 input[type="date"],
 input[type="time"],
