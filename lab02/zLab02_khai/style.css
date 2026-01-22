@@ -1,10 +1,12 @@
 .btn-ex01 {
-    padding: 8px 20px;
     background-color: black;
-    color:white;
-    border-radius: 5px;
-    border-style: none;
-    transition-property: background-color;
+    color: white;
+    /* border: 1px solid black; */
+    border:none;
+    border-collapse: collapse;
+    border-radius: 4px;
+    padding: 5px 15px;
+    font-weight: bold;
 }
 .btn-ex01:hover {
     background-color: #808080;
