@@ -1,0 +1,81 @@
+/*  Gợi ý màu:
+
+    + Nền body: #fff8df
+    + Nút 'Register': #dd2c2c
+    + Nút 'Reset': #e3a73f
+    + Chữ báo lỗi (error message): #bc1313
+    + nền input khi hover: #fff5cf
+    + nền input khi focus: #f3de8e
+    + viền input khi focus: #d97000
+
+*/
+body {
+    margin:auto;
+    width: 350px;
+    background-color: gainsboro;
+    border: 10px solid #fff8df;
+}
+
+.content {
+    font-size: small;
+    background-color: white;
+    padding: 10px;
+    border: 10px solid whitesmoke;
+}
+
+.form-control {
+    display: block;
+    margin-top: 5px;
+}
+
+.form-group {
+    margin: 15px 20px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="time"],
+input[type="range"] {
+    width: 270px;
+    border-radius: 5px;
+    border: 1px solid grey;
+    padding: 5px;
+    transition: background-color 2s ease;
+}
+
+input:hover, select:hover {
+    background-color: #fff5cf;
+}
+
+input:focus, select:focus {
+    background-color: #f3de8e;
+    border: 2px solid #d97000;
+}
+select {
+    width: 280px;
+    background-color: white;
+    border: 1px solid gray;
+    border-collapse: collapse;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.input-error {
+    color: red;
+    font-size: xx-small;
+    display: none;
+}
+
+button {
+    border-style: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+button[type="submit"] {
+    background-color: #dd2c2c;
+}
+button[type="reset"] {
+    background-color: #e3a73f;
+}
