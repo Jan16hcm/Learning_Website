@@ -1,14 +1,13 @@
-.btn-ex01 {
-    background-color: black;
+button {
     color: white;
-    /* border: 1px solid black; */
-    border:none;
+    background-color: black;
+    border-style: none;
     border-collapse: collapse;
     border-radius: 4px;
     padding: 5px 15px;
     font-weight: bold;
     transition: 0.5s;
 }
-.btn-ex01:hover {
+button:hover {
     background-color: #808080;
 }
