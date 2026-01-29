@@ -1,0 +1,52 @@
+#list {
+    display: flexbox;
+}
+
+.box {
+    border: 0.5px solid gray;
+    border-collapse: collapse;
+    padding: 10px 0;
+    max-width: 800px;
+    max-height: 120px;
+    box-sizing: border-box;
+}
+
+.content {
+    display: inline-block;
+}
+
+img {
+    vertical-align: middle;
+    max-height: 100px;
+    max-width: 100px;
+    border-radius: 50px;
+    margin-left: 10px;
+}
+
+.info {
+    vertical-align:middle;
+    margin-left: 10px;
+}
+
+.name {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.major {
+    font-weight:lighter;
+}
+
+.heart {
+    margin-left: 400px;
+    font-size: 200%;
+    
+    width: 100px;
+    height: 100px;
+}
+.heart:hover {
+    
+}
+
+/* .button {
+    margin-left: 50px; 
+} */
