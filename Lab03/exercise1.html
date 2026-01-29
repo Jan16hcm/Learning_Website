@@ -9,13 +9,27 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
+
+
+<style>
+</style>
+
+
 <body>
 
 <style>
 
     .errorMessage {
+        opacity: 0;
         color: rgb(185, 0, 0);
         font-size: 14px;
+        transition: opacity 1.5s ease-in-out;
+    }
+    .disappear {
+        opacity: 0;
+    }
+    .appear {
+        opacity: 1;
     }
 </style>
 
@@ -38,6 +52,57 @@
         </div>
     </div>
 </div>
+
+<script>
+    //Need email and password
+    //Email needs to be valid
+    //Password should have 6 characters
+    const err= document.querySelector(".errorMessage")
+    const email = document.getElementById("email")
+    const pass = document.getElementById("pwd")
+    const form = document.querySelector("form")
+    
+    function errorFields(txtError,field) {
+        err.innerHTML=txtError
+        err.classList.add("appear")
+        field.focus()
+        field.onclick = () => {
+            err.classList.replace("appear","disappear")
+        }
+        
+    }
+    form.onsubmit = (e) => {
+    const isEmptyEmail= email.value.trim().length===0
+    const isEmptyPass= pass.value.trim().length===0
+    if(isEmptyEmail && isEmptyPass) {
+        console.log("epdebug")
+        err.innerHTML="You need to fill both fields"
+        err.classList.add("appear")
+        email.focus()
+        pass.focus()
+
+        return false
+    }
+    if(email.value.trim().length===0) {
+        e.preventDefault
+        console.log(email.value)
+        //console.log(email.textContent)
+        errorFields("Your email is empty",email)
+        console.log("edebug")
+        return false
+    }
+    if(pass.value.trim().length===0) {
+        errorFields("Your password is empty",pass)
+        console.log("pdebug")
+        return false
+    }
+    //console.log("This shouldn't work")
+    return true
+}
+    
+
+</script>
+
 
 </body>
 </html>
