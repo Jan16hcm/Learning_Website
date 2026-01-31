@@ -58,9 +58,12 @@ This is a personal project for learning website and application development.
 │       ├── ex06
 │       │   ├── ex06.css
 │       │   └── ex06.html
-│       └── ex07
-│           ├── ex07.css
-│           └── ex07.html
+│       ├── ex07
+│       │   ├── ex07.css
+│       │   └── ex07.html
+│       └── ex08
+│           ├── ex08.css
+│           └── ex08.html
 ├── lab03
 │   ├── images
 │   │   ├── pic_001.jpg
@@ -81,6 +84,7 @@ This is a personal project for learning website and application development.
 │       ├── exercise4.html
 │       └── exercise6.html
 └── README.md
+
 
 
 

@@ -1,0 +1,20 @@
+#list {
+    display: grid;
+    grid-template-columns: repeat(4, auto);
+    width: 100vw;
+    height: 100vh;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+#list div{
+    background-color: rgb(38, 192, 243);
+    display: flex;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    font-size: xx-large;
+    color: white;
+}
