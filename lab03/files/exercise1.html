@@ -16,8 +16,6 @@
     .errorMessage {
         color: rgb(185, 0, 0);
         font-size: 14px;
-        visibility: visible;
-        display: none;
     }
 </style>
 
@@ -30,7 +28,6 @@
                     <label for="email">Email:</label>
                     <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
                 </div>
-                
                 <div class="form-group">
                     <label for="pwd">Password:</label>
                     <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="password">
@@ -42,24 +39,5 @@
     </div>
 </div>
 
-<script>
-    const form = document.querySelector('form')
-    const email = document.getElementById('email')
-    const password = document.getElementById('pwd')
-    const error = document.querySelector('.errorMessage')
-    form.addEventListener("submit", e => {
-        e.preventDefault()
-        if (email.value === "") {
-            error.style.display = "block"
-        } else if (password.value.length < 6) {
-            error.textContent = "Please enter your password."
-            error.style.display = "block"
-        }
-         else {
-            error.style.display = "none"
-        }
-    })
-    
-</script>
 </body>
 </html>
