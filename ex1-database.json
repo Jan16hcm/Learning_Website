@@ -1,0 +1,47 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "name": "John Smith",
+      "age": 30,
+      "state": "pending"
+    },
+    {
+      "id": "2",
+      "name": "Robert Downey",
+      "age": 32,
+      "state": "completed"
+    },
+    {
+      "id": "3",
+      "name": "Taylow Swift",
+      "age": 29,
+      "state": "completed"
+    },
+    {
+      "id": "4",
+      "name": "Jackie Chan",
+      "age": 55,
+      "state": "pending"
+    },
+    {
+      "id": "5",
+      "name": "michael",
+      "age": "19",
+      "state": "Pending"
+    },
+    {
+      "id": "6",
+      "name": "michelle",
+      "age": "21",
+      "state": "Completed"
+    },
+    {
+      "id": "7",
+      "name": "obama",
+      "age": "22",
+      "state": "Pending"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

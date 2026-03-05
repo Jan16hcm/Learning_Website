@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Fetch Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body onload="displayListStudents()">
+
+<div class="container mt-3">
+    <h2>Student List</h2>
+        <p>This table displays a list of students downloaded from a back end service via ajax or fetch api</p>
+        <p>Each student has the following information: id, name, age, status (completed, pending). When clicking on the "change" button, the student's status will be changed (and updated on the server side).</p>
+        <p>To set up a back end service, you can install <code>nodejs</code> and use the <code>json-server</code> tool, see more here <a href="https://github.com/typicode/json-server">https://github.com/typicode/json-server</a></p>
+    <div class="w-50">
+        
+        <form action="">
+            <div class="form-group">
+                <label for="fullname">Fullname</label>
+                <input type="text" id="fullname" placeholder="Fullname" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" placeholder="Age" class="form-control" min="18" max="100">
+            </div>
+            <div class="form-group">
+                <label for="state">State</label>
+                <select class="form-control" id="state">
+                    <option>Pending</option>
+                    <option>Completed</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button id="btn-add" class="btn btn-primary px-5">Add</button>
+            </div>
+        </form>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>State</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+                <!-- <tr>
+                    <td>1</td>
+                    <td>John Smith</td>
+                    <td>30</td>
+                    <td><span class="badge badge-warning">Pending</span></td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-primary">Change</button>
+                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Robert Downey</td>
+                    <td>32</td>
+                    <td><span class="badge badge-success">Confirmed</span></td>
+                    <td>
+                        <button class="btn btn-sm btn-outline-primary">Change</button>
+                        <button class="btn btn-sm btn-outline-danger">Delete</button>
+                    </td>
+                </tr> -->
+            </tbody>
+        </table>
+        <div id="error" class="alert alert-danger mt-3" style="display:none">
+            Hiển thị thông báo lỗi ở đây.
+        </div>
+    </div>
+</div>
+<script>
+
+    const btnAdd = document.querySelector('#btn-add')
+    const form = document.querySelector('form')
+    const nameField = document.querySelector('#fullname')
+    const ageField = document.querySelector('#age')
+    const stateField = document.querySelector('#state')
+    //const delButtons = document.querySelectorAll('.deleteButton')
+    //console.log(delButtons)
+//
+    //delButtons.forEach(button => {
+    //    button.addEventListener('click', function() {
+    //        var idBeGone= $(this).data('id')
+    //        console.log(idBeGone)
+    //    })
+    //})
+
+    function displayAStudent(student) {
+        var idData= $("<td></td>").text(student.id)
+            var nameData= $("<td></td>").text(student.name)
+            var ageData=$("<td></td>").text(student.age)
+            var stateData=$("<td></td>").text(student.state)
+            var actionsData='<button type="button" class="btn btn-outline-primary btn-sm changeButton">Change</button> <button type="button" class="btn btn-outline-danger btn-sm deleteButton" data-id="' + student.id + '">Delete</button>'
+            var row=$("<tr></tr>").append(idData,nameData,ageData,stateData,actionsData)
+           // console.log(row)
+            $("tbody").append(row)
+            $(".deleteButton").addEventListener('click',e =>{
+                var idBeGone=$(this)
+            })
+    }
+    async function displayListStudents() {
+        const students  = await fetch("http://localhost:3000/students")
+        const std = await students.json()
+        //console.log(std)
+        //console.log(std[1].id)
+        std.forEach((std,i) => {
+            //console.log(std)
+            displayAStudent(std)
+        })
+    }
+    
+    form.addEventListener('submit',async  e => {
+        
+        e.preventDefault() // stop the form from being submitted
+
+        const name = nameField.value.trim()
+        const age = ageField.value
+        const state = stateField.value
+        const students  = await fetch("http://localhost:3000/students")
+        const std = await students.json()
+
+        if (name === '') {
+            nameField.focus()
+            return alert('Please enter student name');
+        }
+
+        
+        const id=(Number(std[std.length-1].id)+1).toString()
+        const newStudent={id,name,age,state}
+        console.log(newStudent)
+
+        const createStudent = await fetch("http://localhost:3000/students", {
+            method : 'POST',
+            headers: {
+                'Content-Type' : 'application/json'
+            },
+            body: JSON.stringify(newStudent)
+        })
+        //console.log(createStudent)
+        if(createStudent.status===201) {
+            alert("Successfully created a new student")
+            displayAStudent(newStudent)
+        }
+    })
+
+</script>
+</body>
+</html>
