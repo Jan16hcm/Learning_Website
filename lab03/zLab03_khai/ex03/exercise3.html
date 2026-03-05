@@ -8,13 +8,9 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<style>
-   
-</style>
-
 
 <div class="container">
     
@@ -22,11 +18,11 @@
         <div class="col-md-8 myform border rounded p-4 mt-5">
             <div class="form-group">
                 <label for="message">Text content:</label>
-                <input type="text" class="form-control" id="message" placeholder="Enter new text" name="message">
+                <input onkeyup="updateText(this.value)" type="text" class="form-control" id="message" placeholder="Enter new text" name="message">
             </div>
             <div class="form-group">
                 <label for="color">Text color:</label>
-                <select name="color" id="color" class="custom-select">
+                <select onchange="updateColor(this.value)" name="color" id="color" class="custom-select">
                     <option>Black</option>
                     <option>Red</option>
                     <option>Green</option>
@@ -36,17 +32,17 @@
             <div class="form-group">
                 
                 <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="bold">
+                    <input onchange="updateStyle(this.checked)" type="checkbox" class="custom-control-input" id="bold">
                     <label class="custom-control-label" for="bold">Bold</label>
                 </div>
     
                 <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="italic">
+                    <input onchange="changeStyle(this.checked)" type="checkbox" class="custom-control-input" id="italic">
                     <label class="custom-control-label" for="italic">Italic</label>
                 </div>
     
                 <div class="custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="underline">
+                    <input onchange="changeDecoration(this.checked)" type="checkbox" class="custom-control-input" id="underline">
                     <label class="custom-control-label" for="underline">Underline</label>
                 </div>
             </div>
@@ -58,6 +54,6 @@
     </div>
 
 </div>
-
+ <script src="main.js"></script>
 </body>
 </html>
