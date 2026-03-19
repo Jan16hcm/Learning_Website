@@ -65,6 +65,12 @@ This is a personal project for learning website and application development.
 │           ├── ex08.css
 │           └── ex08.html
 ├── lab03
+│   ├── files
+│   │   ├── exercise1.html
+│   │   ├── exercise2.html
+│   │   ├── exercise3.html
+│   │   ├── exercise4.html
+│   │   └── exercise6.html
 │   ├── images
 │   │   ├── pic_001.jpg
 │   │   ├── pic_002.jpg
@@ -77,12 +83,61 @@ This is a personal project for learning website and application development.
 │   │   ├── pic_009.jpg
 │   │   └── pic_010.jpg
 │   ├── Lab03.pdf
+│   ├── test_json_sever
+│   │   └── index.html
 │   └── zLab03_khai
-│       ├── exercise1.html
-│       ├── exercise2.html
-│       ├── exercise3.html
-│       ├── exercise4.html
-│       └── exercise6.html
+│       ├── ex01
+│       │   ├── index.html
+│       │   ├── main.js
+│       │   └── style.css
+│       ├── ex02
+│       │   ├── index.html
+│       │   ├── main.js
+│       │   └── style.css
+│       ├── ex03
+│       │   ├── exercise3.html
+│       │   ├── main.js
+│       │   └── style.css
+│       ├── ex04
+│       │   └── exercise4.html
+│       └── ex05
+├── lab04
+│   ├── images
+│   └── zLab04_khai
+├── lab05
+│   ├── files
+│   │   ├── ~$b05-2024.docx
+│   │   ├── ex1-database.json
+│   │   ├── ex1-how to setup the server with json-server.mp4
+│   │   ├── ex1.html
+│   │   ├── ex3-color picker.mp4
+│   │   ├── ex4.html
+│   │   ├── ex5.html
+│   │   ├── ex6
+│   │   │   ├── cntt_01.gif
+│   │   │   ├── cntt_02.gif
+│   │   │   ├── cntt_03.gif
+│   │   │   ├── cntt_04.gif
+│   │   │   ├── cntt_05.gif
+│   │   │   ├── cntt_06.gif
+│   │   │   ├── cntt_07.gif
+│   │   │   ├── cntt_08.gif
+│   │   │   ├── cntt_09.gif
+│   │   │   └── cntt_10.gif
+│   │   ├── ex6-puzze-example.mp4
+│   │   ├── Lab05-2024.docx
+│   │   └── Lab05-2024.pdf
+│   ├── images
+│   ├── lab
+│   │   ├── backend
+│   │   │   └── products.json
+│   │   └── frontend
+│   │       └── index.html
+│   └── zLab05_khai
+│       ├── ex01
+│       │   ├── index.html
+│       │   └── main.js
+│       └── ex02
 └── README.md
 
 
