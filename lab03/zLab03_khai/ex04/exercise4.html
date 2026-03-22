@@ -38,9 +38,11 @@
     </style>
   </head>
   <body>
-    <div class="drop-zone" id="drop-zone">
-      <p>Drag and Drop a File Here</p>
-    </div>
+    <label class="drop-zone" id="drop-zone"
+    for="input-file">
+      <input type="file" name="input-file" id="input-file" accept="image/*,video/*,audio/*" hidden>
+        Drag and Drop a File Here
+    </label>
     <div class="file-info" id="file-info">
       <p><strong>File Name:</strong> <span id="file-name"></span></p>
       <p><strong>File Type:</strong> <span id="file-type"></span></p>
@@ -53,6 +55,36 @@
       const fileName = document.getElementById("file-name");
       const fileType = document.getElementById("file-type");
       const fileSize = document.getElementById("file-size");
+      const inputFile = document.getElementById("input-file");
+
+      inputFile.addEventListener("change", uploadFile);
+
+      function uploadFile() {
+        let file = inputFile.files[0];
+        fileName.textContent = file.name;
+        fileType.textContent = file.type;
+        fileSize.textContent = formatSize(file.size);
+
+        fileInfo.style.display = "block"
+      }
+
+      dropZone.addEventListener("dragover", function(e) {
+        e.preventDefault();
+      });
+
+      dropZone.addEventListener("drop", function(e){
+        e.preventDefault();
+        inputFile.files = e.dataTransfer.files;
+        uploadFile();
+      });
+      
+      function formatSize(bytes) {
+        if(bytes < 1024) return bytes + " B";
+        if(bytes < 1024 ** 2) return (bytes / 1024).toFixed(2) + " KB";
+        if(bytes < 1024 ** 3) return (bytes / 1024 ** 2).toFixed(2) + " MB";
+        return (bytes / 1024 ** 3).toFixed(2) + " GB";
+        
+      }
     </script>
   </body>
 </html>
