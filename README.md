@@ -3,6 +3,8 @@ This is a personal project for learning website and application development.
 🛠 Technologies
 - HTML5
 - CSS (basic)
+- Javascript
+- PHP
 - Git & GitHub
 
 🎯 Purpose
