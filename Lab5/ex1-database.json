@@ -107,6 +107,18 @@
       "name": "woohooo",
       "age": "61",
       "state": "Pending"
+    },
+    {
+      "id": "19",
+      "name": "123",
+      "age": "22",
+      "state": "Pending"
+    },
+    {
+      "id": "20",
+      "name": "Trần Mình Nghia",
+      "age": "22",
+      "state": "Completed"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

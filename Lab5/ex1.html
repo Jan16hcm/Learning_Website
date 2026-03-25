@@ -102,9 +102,9 @@
             var row=$("<tr></tr>").append(idData,nameData,ageData,stateData,actionsData)
            // console.log(row)
             $("tbody").append(row)
-            $(".deleteButton").addEventListener('click',e =>{
-                var idBeGone=$(this)
-            })
+            //$(".deleteButton").addEventListener('click',e =>{
+            //    var idBeGone=$(this)
+            //})
     }
     async function displayListStudents() {
         const students  = await fetch("http://localhost:3000/students")
