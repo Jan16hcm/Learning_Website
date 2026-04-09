@@ -25,10 +25,11 @@
             $error = 'Password must have at least 6 characters';
         }
         else{
-            $userSQL = $conn->query("select username from account");
-            
-            $_SESSION['user'] = 'admin';
-            $_SESSION['name'] = 'Mai Van Manh';
+            $userSQL = $conn->query("SELECT username FROM account");
+            $result = $userSQL->fetch_assoc();
+            print_r($result); 
+            // $_SESSION['user'] = 'admin';
+            // $_SESSION['name'] = 'Mai Van Manh';
 
             header('Location: index.php');
             exit();
