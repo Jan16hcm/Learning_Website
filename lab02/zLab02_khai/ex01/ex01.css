@@ -1,0 +1,13 @@
+button {
+    color: white;
+    background-color: black;
+    border-style: none;
+    border-collapse: collapse;
+    border-radius: 4px;
+    padding: 5px 15px;
+    font-weight: bold;
+    transition: 0.5s;
+}
+button:hover {
+    background-color: #808080;
+}

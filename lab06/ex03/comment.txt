@@ -1,0 +1,3 @@
+Duy;alert-info;Tôi thấy học web nói chung cũng nhàn.;10:30 - 10/11/2021
+Khoa;alert-danger;Đằng sau 1 lập trình viên thành công chính là một người bạn gái… không tồn tại..;10:30 - 10/11/2021
+Thủy;alert-success;Khi bạn chết, bạn không nhận thức được điều đó mà chỉ có những người xung quanh bạn biết. Khi bạn code dở cũng vậy.;10:30 - 10/11/2021

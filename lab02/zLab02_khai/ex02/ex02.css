@@ -1,0 +1,15 @@
+h1 {
+    text-align: center;
+}
+table, th, td {
+    margin: auto;
+    text-align: center;
+    border: 0.5px solid #d9d9d9;
+    border-collapse: collapse;
+}
+th, tr:nth-child(2n) {
+    background-color: #eeeeee;
+}
+th, td {
+    padding: 5px 20px;
+}

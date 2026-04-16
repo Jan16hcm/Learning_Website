@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Drag and Drop File Upload</title>
+    <style>
+        
+        .container {
+            width: 420px;
+            height: 270px;
+            border: 2px solid #6161ff;
+            background-color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            position: relative;
+        }
+        .container .progressBar {
+            width: 0;
+            height: 270px;
+            background-color: rgb(7, 170, 7);
+
+            transition: width 0.5s ease-in-out;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            /* top: 0; */
+            left: 0;
+            z-index: 1; 
+            /* Ai cos z-index lonws honw thif nam o tren */
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+        }
+        .drop-zone {
+            width: 400px;
+            height: 250px;
+            border: 2px dashed #cccccc;
+            background-color: #fafafa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #666;
+            transition: background-color 0.3s ease;
+            background-position: center;
+
+            z-index: 0;
+            position: relative;
+        }
+        .drop-zone.drag-over {
+            background-color: #e0f7fa;
+        }
+        .file-info {
+            margin-top: 20px;
+            margin-left: 24px;
+            color: #333;
+            display: none;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="container">
+        <div class="progressBar" id="progressBar">
+        </div>
+        <label class="drop-zone" id="drop-zone"
+        for="input-file">
+          <input type="file" name="input-file" id="input-file" accept="image/*,video/*,audio/*" hidden>
+            Drag and Drop a File Here
+        </label>
+    </div>
+    <div class="file-info" id="file-info">
+      <p><strong>File Name:</strong> <span id="file-name"></span></p>
+      <p><strong>File Type:</strong> <span id="file-type"></span></p>
+      <p><strong>File Size:</strong> <span id="file-size"></span> bytes</p>
+    </div>
+
+    <script>
+        const dropZone = document.getElementById("drop-zone");
+        const fileInfo = document.getElementById("file-info");
+        const fileName = document.getElementById("file-name");
+        const fileType = document.getElementById("file-type");
+        const fileSize = document.getElementById("file-size");
+        const inputFile = document.getElementById("input-file");
+        const progressBar = document.getElementById("progressBar");
+        const newP = document.createElement("p");
+
+        const strong = document.createElement("strong");
+        strong.textContent = "Progress: ";
+
+        const progressText = document.createElement("span");
+        progressText.textContent = "0%";
+
+        newP.append(strong);
+        newP.append(progressText);
+
+        fileInfo.appendChild(newP);
+        let progress = 0;
+        let interval;
+
+        inputFile.addEventListener("change", uploadFile);
+
+        function uploadFile() {
+            let file = inputFile.files[0];
+            fileName.textContent = file.name;
+            fileType.textContent = file.type;
+            fileSize.textContent = formatSize(file.size);
+            fileInfo.style.display = "block"
+
+            dropZone.style.opacity = "0.4"
+            
+
+            progress = 0;
+            progressBar.style.width = "0%";
+            interval = setInterval(upLoading,500);
+        }
+
+        function upLoading() {
+            progress += 5;
+            progressText.textContent = "Uploading: " + progress + "%";
+            if(progress >= 100) {
+                progress = 100;
+                clearInterval(interval);
+                strong.textContent = "Upload complete";
+                progressText.textContent = "";
+            }
+            dropZone.textContent = "Uploading " + progress + "%";
+            progressBar.style.width = progress + "%";
+        }
+        dropZone.addEventListener("dragover", function(e) {
+            e.preventDefault();
+        });
+
+        dropZone.addEventListener("drop", function(e){
+            e.preventDefault();
+            inputFile.files = e.dataTransfer.files;
+            uploadFile();
+        });
+        
+        function formatSize(bytes) {
+            if(bytes < 1024) return bytes + " B";
+            if(bytes < 1024 ** 2) return (bytes / 1024).toFixed(2) + " KB";
+            if(bytes < 1024 ** 3) return (bytes / 1024 ** 2).toFixed(2) + " MB";
+            return (bytes / 1024 ** 3).toFixed(2) + " GB";
+            
+        }
+    </script>
+  </body>
+</html>
